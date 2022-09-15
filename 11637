@@ -1,0 +1,21 @@
+for i in range(int(input())):
+  given_n =int(input())
+  total_vote = 0; vote_list= []
+  for k in range(given_n):
+    voted = int(input())
+    total_vote +=voted;
+    vote_list.append(voted)
+  if max(vote_list) > total_vote/2:
+    print("majority winner %d" %(vote_list.index(max(vote_list))+1))
+  #1-1 minor에서 최다 득표자가 1명이다..
+
+  else:
+    compare = max(vote_list)
+    count =0
+    for m in vote_list:
+      if m == compare:
+        count +=1
+    if count >1:
+      print("no winner")
+    else:
+      print("minority winner %d"%(vote_list.index(max(vote_list))+1))
